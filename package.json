@@ -1,0 +1,34 @@
+{
+  "name": "join-and-shorten",
+  "version": "0.0.0",
+  "description": "Join and shorten strings with priorities",
+  "main": "source/index.js",
+  "scripts": {
+    "pub": "np",
+    "test": "mocha -r test/index.js 'test/unit/**/*.spec.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/perry-mitchell/join-and-shorten.git"
+  },
+  "keywords": [
+    "join",
+    "shorten",
+    "string",
+    "id",
+    "generate",
+    "format",
+    "limit"
+  ],
+  "author": "Perry Mitchell <perry@perrymitchell.net>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/perry-mitchell/join-and-shorten/issues"
+  },
+  "homepage": "https://github.com/perry-mitchell/join-and-shorten#readme",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1",
+    "np": "^2.16.0"
+  }
+}
