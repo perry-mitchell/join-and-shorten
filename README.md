@@ -43,6 +43,15 @@ join([
 ], "_", 11); // "one_three"
 ```
 
+`join` also supports a strip-mode parameter, to allow for shortening by **character** instead of by **item**:
+
+```javascript
+join([
+    ["abcdef", 2],
+    ["123456", 3]
+], ":", 10, STRIP_MODE_REMOVE_CHARACTER); // "abc:123456"
+```
+
 ## Tests
 
 Run the tests by executing `npm test`.
