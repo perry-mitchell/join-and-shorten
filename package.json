@@ -1,6 +1,6 @@
 {
   "name": "join-and-shorten",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Join and shorten strings with priorities",
   "main": "source/index.js",
   "scripts": {
