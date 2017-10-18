@@ -1,7 +1,7 @@
 # join-and-shorten
 Join and shorten strings with priorities
 
-[![Build Status](https://travis-ci.org/perry-mitchell/join-and-shorten.svg?branch=master)](https://travis-ci.org/perry-mitchell/join-and-shorten)
+[![npm version](https://badge.fury.io/js/join-and-shorten.svg)](https://www.npmjs.com/package/join-and-shorten) [![Build Status](https://travis-ci.org/perry-mitchell/join-and-shorten.svg?branch=master)](https://travis-ci.org/perry-mitchell/join-and-shorten)
 
 ## About
 
