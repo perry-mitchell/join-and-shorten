@@ -91,7 +91,7 @@ function join(items, joiner = "_", limit = Infinity, stripMode = STRIP_MODE_REMO
         // the least-significant end
         .reverse();
     while (isTooLong(workingItems, joiner, limit)) {
-        shorten(workingItems);
+        shorten(workingItems, stripMode);
     }
     return workingItems
         .map(item => item[0])
@@ -104,7 +104,7 @@ function join(items, joiner = "_", limit = Infinity, stripMode = STRIP_MODE_REMO
  * Shorten the items array (destructive)
  * @param {Array.<JoinItemWithParams>} items An array of items with priorties
  */
-function shorten(items) {
+function shorten(items, stripMode) {
     let lowestIndex = -1,
         lowestPrio = Infinity;
     items.forEach((item, index) => {
@@ -117,7 +117,14 @@ function shorten(items) {
     if (lowestIndex < 0) {
         lowestIndex = items.length - 1;
     }
-    items.splice(lowestIndex, 1);
+    const item = items[lowestIndex][0];
+    if (stripMode === STRIP_MODE_REMOVE_WHOLE || item.length <= 1) {
+        items.splice(lowestIndex, 1);
+    } else if (stripMode === STRIP_MODE_REMOVE_CHARACTER) {
+        items[lowestIndex][0] = item.substr(0, item.length - 1);
+    } else {
+        throw new Error("Invalid strip mode: " + stripMode);
+    }
 }
 
 Object.assign(join, {

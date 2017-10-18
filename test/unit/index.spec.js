@@ -1,5 +1,7 @@
 const join = require("../../source/index.js");
 
+const { STRIP_MODE_REMOVE_CHARACTER } = join;
+
 describe("join", function() {
 
     it("joins many without a limit", function() {
@@ -26,6 +28,22 @@ describe("join", function() {
             ["third", 3]
         ], "_", 14);
         expect(joined).to.equal("second_third");
+    });
+
+    it("supports stripping by character", function() {
+        const joined = join([
+            ["abcdef", 2],
+            ["123456", 3]
+        ], ":", 10, STRIP_MODE_REMOVE_CHARACTER);
+        expect(joined).to.equal("abc:123456");
+    });
+
+    it("removes items with 0 length after stripping", function() {
+        const joined = join([
+            ["abcdef", 2],
+            ["123456", 3]
+        ], ":", 6, STRIP_MODE_REMOVE_CHARACTER);
+        expect(joined).to.equal("123456");
     });
 
 });
