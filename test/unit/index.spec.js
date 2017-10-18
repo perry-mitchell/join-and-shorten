@@ -19,4 +19,13 @@ describe("join", function() {
         expect(joined).to.equal("first_second_third");
     });
 
+    it("strips items with lower priorities", function() {
+        const joined = join([
+            ["first", 2],
+            ["second", 4],
+            ["third", 3]
+        ], "_", 14);
+        expect(joined).to.equal("second_third");
+    });
+
 });
