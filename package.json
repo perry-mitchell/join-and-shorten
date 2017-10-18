@@ -4,6 +4,7 @@
   "description": "Join and shorten strings with priorities",
   "main": "source/index.js",
   "scripts": {
+    "docs": "jsdoc2md source/index.js > API.md",
     "pub": "np",
     "test": "mocha -r test/index.js 'test/unit/**/*.spec.js'"
   },
@@ -28,6 +29,7 @@
   "homepage": "https://github.com/perry-mitchell/join-and-shorten#readme",
   "devDependencies": {
     "chai": "^4.1.2",
+    "jsdoc-to-markdown": "^3.0.0",
     "mocha": "^4.0.1",
     "np": "^2.16.0"
   }
