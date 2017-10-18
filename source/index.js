@@ -1,4 +1,9 @@
 /**
+ * join-and-shorten module
+ * @module join-and-shorten
+ */
+
+/**
  * Setting to remove whole items when shortening
  * @readonly
  * @type {String}
@@ -60,21 +65,22 @@ function isTooLong(items, joiner, limit) {
  * Can join regular strings in an array, or an array of arrays where
  * string priorities can be set.
  * @example
- *      // Basic join:
- *      join(["one", "two", "three"]); // "one_two_three"
- *      // With options:
- *      join(["one", "two", "three"], "-", 8); // "one-two"
- *      // With priorities:
- *      join([
- *          ["one", 2],
- *          ["two", 1],
- *          ["three", 3]
- *      ], ".", 11); // "one.three"
+ * // Basic join:
+ * join(["one", "two", "three"]); // "one_two_three"
+ * // With options:
+ * join(["one", "two", "three"], "-", 8); // "one-two"
+ * // With priorities:
+ * join([
+ *     ["one", 2],
+ *     ["two", 1],
+ *     ["three", 3]
+ * ], ".", 11); // "one.three"
  * @param {Array.<JoinItem>} items An array of items to join
  * @param {String=} joiner The string to join the items with
  * @param {Number=} limit The string length limit
  * @param {String=} stripMode The mode with which to strip items
  * @returns {String} The final joined string
+ * @alias join-and-shorten:join
  */
 function join(items, joiner = "_", limit = Infinity, stripMode = STRIP_MODE_REMOVE_WHOLE) {
     // clone items
